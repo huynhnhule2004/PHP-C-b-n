@@ -1,0 +1,31 @@
+table {
+    border-collapse: collapse;
+    box-shadow: 0 0 2px rgb(186,186,238);
+    outline: none;
+    border: 2px solid rgb(186, 186, 238);
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+caption {
+    color: blue;
+    font-size: 40px;
+    font-variant: small-caps;
+}
+th {
+    background-color: blue;
+    color: white;
+    font-variant: small-caps;
+    border: 2px solid rgb(186, 186, 238);
+}
+td {
+    min-width: 150px;
+    color: black;
+    border: 2px solid rgb(186, 186, 238);
+}
+tr:nth-child(2n+1) {
+    background-color: rgb(217, 222, 233);
+}
+img {
+    width: 100px;
+}

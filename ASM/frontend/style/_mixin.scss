@@ -1,0 +1,12 @@
+@mixin boxHeader {
+    height: 120px;
+    margin-bottom: 10px;
+}
+@mixin widthHeightIcon {
+    height: 30px;
+    width: 30px;
+}
+@mixin hr {
+    color: $grayColor;
+    margin: 5px 0 10px 0;
+}
