@@ -2,7 +2,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$db = "quanlybanhang";
+$db = "qlbh";
 
 // Create connection
 $conn = mysqli_connect($server, $user, $pass, $db);
@@ -11,7 +11,7 @@ $conn = mysqli_connect($server, $user, $pass, $db);
 if (!$conn) {
     die ("Connection failed: ". mysqli_connect_error());
 }
-// echo "Connected successfully";
+echo "Connected successfully";
  
 
 ?>
