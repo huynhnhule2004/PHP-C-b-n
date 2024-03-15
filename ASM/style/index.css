@@ -1,0 +1,207 @@
+.container-fluid {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 600px;
+}
+
+header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+}
+header .phonenumber {
+  height: 120px;
+  margin-bottom: 10px;
+}
+header .phonenumber a {
+  color: #5EC9FF;
+}
+header .phonenumber a span {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  color: #FFFFFF;
+  background-color: #5EC9FF;
+  border-radius: 50%;
+  text-align: center;
+}
+header .logo {
+  height: 120px;
+  margin-bottom: 10px;
+}
+header .require {
+  height: 120px;
+  margin-bottom: 10px;
+}
+header .require svg {
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+  color: #5EC9FF;
+}
+header .search input {
+  display: none;
+}
+
+nav {
+  height: 60px;
+  line-height: 45px;
+}
+nav .dropdown-menu {
+  top: 190px;
+  border-radius: 0px;
+  display: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+}
+nav .dropdown-menu .nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+nav .list-shop:hover .dropdown-menu {
+  display: block;
+}
+nav .nav-link {
+  color: #000;
+}
+nav .nav-link:hover {
+  color: #5EC9FF;
+}
+
+.content .row .col-3 form .float-end {
+  color: #ff0000;
+  font-weight: bold;
+}
+.content .row .col-3 form input {
+  width: 100%;
+  border: none;
+  background-color: #ff0000;
+  color: #FFFFFF;
+  line-height: 40px;
+}
+.content .user {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+}
+.content .user p {
+  color: #000;
+}
+.content .user p a {
+  color: #5EC9FF;
+  text-decoration: none;
+}
+.content .user .btn {
+  background-color: #1c2632;
+  color: #FFFFFF;
+  margin-top: 15px;
+}
+.content .user .btn:hover {
+  background-color: #ff0000;
+}
+.content h3 {
+  color: #999;
+}
+.content .col {
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.content .col table .w-50 {
+  position: relative;
+}
+.content .col table .w-50 .drop {
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+.content .col table .w-50 .price-detail {
+  position: absolute;
+  top: 85px;
+  right: 0px;
+}
+.content .col table td {
+  padding: 0;
+}
+.content .col table td a {
+  text-decoration: none;
+  margin-left: 20px;
+  color: #000;
+}
+.content .col table td a img {
+  width: 100px;
+  height: 100px;
+}
+.content .col form .size .btn {
+  border: 1px solid #999;
+}
+.content .col form .size .btn:focus {
+  border: 1px solid #ff0000;
+}
+.content .col form .buy {
+  margin-top: 50px;
+}
+.content .col form .buy button {
+  line-height: 50px;
+  border: none;
+  border-radius: 3px;
+  background-color: #5EC9FF;
+  color: #FFFFFF;
+  font-weight: bold;
+  width: 200px;
+  margin-right: 15px;
+}
+.content .col form .buy button svg {
+  color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+}
+.content .col .sale {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  background: #ff0000;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  font-size: 12px;
+  padding: 9px 5px;
+  color: #FFFFFF;
+}
+.content .col:hover {
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.3);
+}
+.content p {
+  color: #999;
+  margin: 10px 0 5px 0;
+}
+.content svg {
+  color: #ffae00;
+}
+.content hr {
+  color: #999;
+  margin: 5px 0 10px 0;
+}
+.content .price .float-start, .content .price .text-lg {
+  color: #ff0000;
+  font-weight: bold;
+}
+.content .price .text-lg {
+  font-size: xx-large;
+}
+
+footer {
+  background-color: #1c2632;
+  color: #FFFFFF;
+  margin-top: 40px;
+}
+footer .footer-center p {
+  color: #999;
+}
+footer hr {
+  color: #999;
+  margin: 5px 0 10px 0;
+  margin: 0;
+}
+footer .text-center {
+  line-height: 50px;
+  background-color: #1c2632;
+  color: #FFFFFF;
+  font-size: smaller;
+  font-weight: bold;
+}/*# sourceMappingURL=index.css.map */
