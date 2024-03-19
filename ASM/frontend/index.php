@@ -1,5 +1,12 @@
-<?php require '../database.php'; ?>
-
+<?php
+require '../database.php';
+$sql = "SELECT * FROM sanpham WHERE soLuong >= 1000";
+$result = mysqli_query($conn, $sql);
+if ($result === false)
+  echo mysqli_error($conn);
+else
+  $articles = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,10 +14,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang chủ</title>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="/ASM/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/ASM/style/index.css">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style/index.css">
+
 </head>
 
 <body>
@@ -33,7 +40,7 @@
           </div>
           <div class="col">
             <div class="logo d-flex justify-content-center icon-link">
-              <a href="index.php"><img class="img-fluid" src="/ASM/img/logo.webp" alt=""></a>
+              <a href="index.php"><img class="img-fluid" src="../img/logo.webp" alt=""></a>
             </div>
           </div>
           <div class="col">
@@ -48,9 +55,8 @@
                   <input type="text" placeholder="Tìm kiếm..." class="form-control" id="input">
                 </form>
               </div>
-
               <div class="users d-inline">
-                <a href="sign-in.html" class="text-decoration-none">
+                <a href="sign-in.php" class="text-decoration-none">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
                   </svg>
@@ -58,7 +64,7 @@
 
               </div>
               <div class="cart d-inline">
-                <a href="" class="text-decoration-none">
+                <a href="cartActive.php" class="text-decoration-none">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                   </svg>
@@ -100,81 +106,57 @@
     </nav>
 
     <div class="banner">
-      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <!-- Slide 1 -->
-          <div class="carousel-item active ">
-            <img src="/ASM/img/slide_index_1.jpg" class="d-block w-100 img-fluid" alt="Slide 1">
-          </div>
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <img src="/ASM/img/slide_index_2.jpg" class="d-block w-100 img-fluid" alt="Slide 2">
-          </div>
-        </div>
-        <!-- Nút chuyển slide -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      <img src="../img/collection_image.jpg" alt="" class="img-fluid">
     </div>
 
     <div class="content container">
       <h3 class="text-center mt-4 ">SẢN PHẨM NỔI BẬT</h3>
-      <?php
-      $sql = "select * from sanpham where soLuong >= 1000";
-      $result = mysqli_query($conn, $sql);
-      if ($result === false)
-        echo mysqli_error($conn);
-      else
-        $articles = mysqli_fetch_all($result, MYSQLI_ASSOC);
-      if (empty($articles)) :
-        echo "Không có sản phẩm nào";
-      else :
-        $count = 0;
-        foreach ($articles as $k) :
-          if ($count % 4 == 0) echo '<div class="row">';
-          echo '
-                    <div class="col p-0 m-4 ">
-                    <img src="../img/../img/' . $k['hinhAnh'] . '.webp" class="img-fluid w-100" alt="Product Image">
-                    <div class="sale">-' . $k['giamGia'] . '%</div>
-                    <h4 class="mt-4 ps-3">' . $k['ten'] . '</h4>
-                    <p class="ps-3">VERGENCY</p>
-                    <span class="ps-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                          </svg>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                          </svg>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                          </svg>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                          </svg>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                          </svg>
-                    </span>
-                    <hr>
-                    <div class="price pb-5">
-                            <span class="float-start ps-3">₫' . $k['gia'] . '</span>
-                            <span class="float-end text-decoration-line-through pe-3">₫' . $k['giaGoc'] . '</span>
-                        
-                    </div>
-                </div>';
-          if ($count % 4 == 3) echo '</div>';
-          $count++;
-        endforeach;
-        if ($count % 4 != 0) echo '</div>';
-      endif;   ?>
+      <div class="row justify-content-center">
+        <?php
+        if (empty($articles)) :
+          echo "Không có sản phẩm nào!";
+        else :
+          foreach ($articles as $k) :
+        ?>
+            <div class="col-md-3 col p-0 m-4 ">
+              <?php $linkdetail = "detail.php?msp=" . $k['id_sp']; ?>
+              <a href="<?php echo $linkdetail; ?>">
+                <img alt="" class="img-fluid w-100" src="../img/<?php echo $k['hinhAnh']; ?>.webp"></a>
+              <div class="sale">-<?php echo $k['giamGia']; ?>%</div>
+              <h4 class="mt-4 ps-3"><?php echo $k['ten'] ?></h4>
+              <p class="ps-3">VERGENCY</p>
+              <span class="ps-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+              </span>
+              <hr>
+              <div class="price pb-5">
+                <span class="float-start ps-3">₫<?php echo $k['gia'] ?></span>
+                <span class="float-end text-decoration-line-through pe-3">₫<?php echo $k['giaGoc'] ?></span>
 
+              </div>
+            </div>
+        <?php
+          endforeach;
+        endif;
+        ?>
+      </div>
     </div>
+
+
 
 
     <footer>
@@ -214,6 +196,9 @@
               <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FVergency.vn%3Fmibextid%3DZbWKwL&tabs=tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
 
+
+
+
           </div>
         </div>
       </div>
@@ -223,9 +208,8 @@
   </div>
 
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-  <script src="/ASM/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     $(document).ready(function() {
       // Kích hoạt chế độ tự động chuyển đổi sau mỗi 2 giây

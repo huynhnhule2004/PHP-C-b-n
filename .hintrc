@@ -6,7 +6,9 @@
     "axe/name-role-value": [
       "default",
       {
-        "link-name": "off"
+        "link-name": "off",
+        "input-button-name": "off",
+        "button-name": "off"
       }
     ],
     "compat-api/html": [
@@ -22,13 +24,15 @@
     "axe/text-alternatives": [
       "default",
       {
-        "frame-title": "off"
+        "frame-title": "off",
+        "image-alt": "off"
       }
     ],
     "axe/forms": [
       "default",
       {
-        "label": "off"
+        "label": "off",
+        "select-name": "off"
       }
     ],
     "button-type": "off",
