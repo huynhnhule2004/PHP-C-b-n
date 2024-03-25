@@ -11,11 +11,11 @@
 <body>
     <div class="main">
         <!-- start logo -->
-        <div class="callout center"><img src="img/logo.webp" alt=""></div>
+        <div class="callout center mb-2"><img src="img/logo.webp" alt=""></div>
         <!-- end logo -->
         <!-- start menu -->
         <nav>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: orange !important;">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: wheat !important;">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">

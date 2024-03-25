@@ -16,6 +16,8 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/product.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,7 +34,7 @@ else
                         <div class="tensp">
                             <?php echo $k['ten']; ?>
                         </div>
-                        <img src="./img/ANCIENT_ASIA_T-SHIRT_RED.webp" alt="" class="label">
+                        <img src="./img/newicon.jpg" alt="" class="label label">
                         <?php $linkdetail = "product_detail.php?msp=" . $k['id_sp']; ?>
                         <a href="<?php echo $linkdetail; ?>">
                             <img alt="" class="anhsp" src="./img/<?php echo $k['hinhAnh']; ?>.webp"></a>
@@ -41,9 +43,9 @@ else
                             <?php echo $k['gia']; ?>
                         </div>
                         <div class="icon">
-                            <img src="./img/011_BLOKECORE_T-SHIRT_WHITE-BLACK.webp" alt="">
-                            <img src="./img/011_BLOKECORE_T-SHIRT_WHITE-BLACK.webp" alt="">
-                            <img src="./img/019_LINE_T-SHIRT_GRAY-BLACK.webp" alt="">
+                            <img src="./img/tim.png" alt="">
+                            <img src="./img/thu.png" alt="">
+                            <img src="./img/giohang.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -52,6 +54,9 @@ else
         endif;
         ?>
     </div>
+    <?php include "footer.php"; ?>
 </body>
+    
+
 
 </html>

@@ -1,0 +1,14 @@
+.dangky {
+    width: 80%;
+    background-color: rgb(193,250,182);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.dangky>h1 {
+    text-align: center;
+}
+.btn1 {
+    text-align: center;
+}

@@ -31,14 +31,14 @@ else :
 
 <body>
     <?php include "header.php" ?>
-    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.295 16.295a.999.999 0 0 1 0-1.414L10.586 10 5.295 4.71A.999.999 0 1 1 6.708 3.296l6.999 7a.999.999 0 0 1 0 1.414l-6.999 7a.997.997 0 0 1-1.413 0z'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="product.php">Danh sách sản phẩm</a></li> >
-            <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
-        </ol>
-    </nav>
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="product.php">Danh sách sản phẩm</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
+  </ol>
+</nav>
     <div class="product">
-        <div class="row">
+        <div class="row m-0 ">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <div class="card w-75" style="margin: left 30px; margin-right: 20px;">
                     <img class="img-thumbnail" style="width:100%";

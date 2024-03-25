@@ -118,9 +118,9 @@ else :
 
 
             <div class="content container w-75 mt-5">
-                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.295 16.295a.999.999 0 0 1 0-1.414L10.586 10 5.295 4.71A.999.999 0 1 1 6.708 3.296l6.999 7a.999.999 0 0 1 0 1.414l-6.999 7a.997.997 0 0 1-1.413 0z'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="ms-3 mt-2">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="shop.php">Danh sách sản phẩm</a></li> >
+                        <li class="breadcrumb-item"><a href="shop.php">Danh sách sản phẩm</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
                     </ol>
                 </nav>
@@ -197,7 +197,7 @@ else :
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col">
+                    <div class="col hover-none">
                         <div class="description">
                             <h5 class="mt-3">MÔ TẢ SẢN PHẨM</h5>
                             <p>Thông tin sản phẩm:</p>
