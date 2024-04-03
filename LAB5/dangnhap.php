@@ -11,20 +11,20 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     require "./database.php";
     if (isset($_POST['email']) && isset($_POST['pass'])) {
         $email = $_POST['email'];
         $pass = $_POST['pass'];
         $pass = md5($pass);
 
-        if (!$email || !$pass ) {
+        if (!$email || !$pass) {
             echo "Vui lòng nhập đầy đủ thông tin yêu cầu.
             <a href = 'javascript: history.go(-1)'>Trở lại</a>";
             exit;
         }
         //Kiểm tra mail có tồn tại không
-        $sql = "SELECT * FROM khachhang WHERE email='".$email."'";
+        $sql = "SELECT * FROM khachhang WHERE email='" . $email . "'";
         $result = mysqli_query($conn, $sql);
         $id = mysqli_num_rows($result);
         if ($id == 0) {
@@ -35,18 +35,17 @@
         if ($pass == $row["password"]) {
             //Lưu tên đăng nhập
             session_start();
-            $SESSION['email'] = $email;
+            $_SESSION['email'] = $email;
             echo $_SESSION['email'];
             header("Location: bai4pro.php");
             die();
-        }
-        else {
+        } else {
             echo "<h1>Mật khẩu không đúng. Vui lòng nhập lại!</h1>
             <a href='javascript: history.go(-1)'><h2>Trở lại</h2></a>";
             exit;
         }
     }
-    include("header.php") ;
+    include("header.php");
     ?>
 
 
