@@ -6,7 +6,7 @@
         $sql = "SELECT * FROM sanpham ORDER BY id_sp DESC";
         $results = mysqli_query($conn, $sql);
         if ($results === false)
-            echo mysqli_errno($conn);
+            echo mysqli_error($conn);
         else 
             $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
         return $articles;

@@ -30,7 +30,13 @@ function dangkykh($conn)
             VALUE ('$hoten','$diachi','$email','$pass')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
-                echo "<h1>Đăng ký thành công!</h1>";
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Xử lý và kiểm tra dữ liệu đăng ký, lưu vào cơ sở dữ liệu
+                    // Nếu đăng ký thành công, chuyển hướng đến trang đăng nhập
+                    header("Location: index.php?page=dangnhap");
+                    exit;
+                }
+                // echo "<h1>Đăng ký thành công!</h1>";
                 // Có thể thêm bất kỳ hành động nào khác sau khi đăng ký thành công ở đây
             } else {
                 echo "Đã xảy ra lỗi trong quá trình đăng ký.Vui lòng thử lại sau.";
