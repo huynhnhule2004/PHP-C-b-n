@@ -1,31 +1,37 @@
 <?php 
-    include "../model/connect.php";
-    function getDSSP() 
-    {
-        $conn = getdb();
-        $sql = "SELECT a.*,b.ten as tenloai FROM sanpham a, danhmuc b WHERE a.id_dm=b.id_dm and a.trangThai = 1 ORDER BY id_sp DESC";
-        $results = mysqli_query($conn, $sql);
-        if ($results === false)
-            echo mysqli_error($conn);
-        else 
-            $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-        return $articles;
-    }
+include "../model/connect.php";
 
-    function getSP($ma)
-    {
-        $conn = getdb();
-        $sql = "SELECT * FROM sanpham WHERE id_sp='".$ma."'";
-        $results = mysqli_query($conn, $sql);
-        if ($results === false)
-            echo mysqli_error($conn);
-        else 
+function getDSDM()
+{
+    $conn = getdb();
+    $sql = "SELECT * FROM danhmuc where trangThai=1 ORDER BY id_dm DESC";
+    $results = mysqli_query($conn, $sql);
+    if ($results === false) 
+        echo mysqli_error($conn);
+    else 
+        $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+    if (empty($articles))
+        echo "Không có danh mục nào!";
+    return $articles;
+}
+
+function getDM($madm)
+{
+    $conn = getdb();
+    $sql = "SELECT b.*FROM danhmuc a, sanpham b
+        WHERE a.id_dm=b.id_dm and a.id_dm= '".$madm."'";
+    $results = mysqli_query($conn, $sql);
+    if ($results === false) 
+        echo mysqli_error($conn);
+    else 
         // $k = mysqli_fetch_assoc($results);
-            $k = mysqli_fetch_array($results);
-        if (mysqli_num_rows($results) <= 0)
-            echo "Không có sản phẩm nào!";
-        return $k;
-    }
+        $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+    if (mysqli_num_rows($results) <= 0)
+        echo "Không có sản phẩm thuộc danh mục này!";
+    return $articles;
+
+}
+
     //Hàm sửa sản phẩm
     function suasp($ma, $ten, $gia, $soluong, $mota, $loai, $trangthai)
     {
@@ -67,4 +73,3 @@
             exit;
         }
     }
-?>

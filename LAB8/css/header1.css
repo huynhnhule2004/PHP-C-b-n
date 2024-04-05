@@ -1,0 +1,13 @@
+.callout {
+    text-align: center;
+}
+.callout>img {
+    width: 400px;
+}
+.navbar-nav .nav-link:hover {
+    background-color: rgba(239, 233, 221, 0.5);
+    transition: backgrrbba(16,12,2,0.5);
+}
+.navbar-nav .dropdown-item:hover {
+    background-color: orange;
+}

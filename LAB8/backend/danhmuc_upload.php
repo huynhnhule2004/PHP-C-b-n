@@ -1,8 +1,8 @@
 <?php
 ob_start(); //giải quyết lỗi header không chuyển trang:
 include("index1.php");
-include("../model/sanpham.php");
-$articles = getDSSP();
+include("../model/danhmuc.php");
+$articles = getDSDM();
 //Kiểm tra phương thức gửi form đi có phải là post hay ko?
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Kiểm tra quá trình upload file có bị lỗi gì không?
@@ -68,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- <div id="layoutSidenav_content"> -->
     <main class="col-10 p-0">
         <div class="container-fluid px-4  p-0">
-            <h1 class="mt-4">Danh sách sản phẩm</h1>
+            <h1 class="mt-4">DANH SÁCH DANH MỤC SẢN PHẨM</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">
-                    <a href="sanpham_upload.php" style="text-decoration:none">Upload Sản phẩm</a>
+                    <a href="sanpham_upload.php" style="text-decoration:none">Upload Danh Mục Sản phẩm</a>
                 </li>
             </ol>
             <div class="card mb4">
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Danh sách sản phẩm
+                    Danh sách danh mục sản phẩm
                 </div>
                 <!-- tạo thanh ngang kéo kéo khi bảng nhiều cột vượt độ rộng màn hình -->
                 <div class="card-body" style="overflow-x:auto">
@@ -99,13 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tr>
                                     <th scope="col">EDIT</th>
                                     <th>STT</th>
-                                    <th>TÊN</th>
-                                    <th>ĐƠN GIÁ</th>
-                                    <th>SỐ LƯỢNG</th>
-                                    <th>MÔ TẢ</th>
+                                    <th>TÊN DANH MỤC</th>
                                     <th>ẢNH</th>
-                                    <th>LOẠI DANH MỤC</th>
-                                    <th>NGÀY THÊM</th>
                                     <th>TRẠNG THÁI</th>
                                 </tr>
                             </thead>
@@ -115,23 +110,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 foreach ($articles as $row) {
                                     ?>
                                     <td align="right">
-                                        <input type="radio" name="touch" value=<?php echo $row["id_sp"] ?>>
-                                        <button name="sua" type="submit" class="btn btn-outline-warning" formaction="sanpham_sua.php">
+                                        <input type="radio" name="touch" value=<?php echo $row["id_dm"] ?>>
+                                        <button name="sua" type="submit" class="btn btn-outline-warning" formaction="danhmuc_sua.php">
                                             <i class="fas fa-user-edit" style="color: green;"></i> Sửa
                                         </button>
-                                        <button name="xoa" type="submit" class="btn btn-outline-danger" formaction="sanpham_xoa.php">
+                                        <button name="xoa" type="submit" class="btn btn-outline-danger" formaction="danhmuc_xoa.php">
                                             <i class="fas fa-user-times" style="color: green;"></i> Xóa
                                         </button>
                                     </td>
                                     <td><?php echo $i;
                                     $i++; ?></td>
                                     <td><?php echo $row["ten"] ?></td>
-                                    <td><?php echo $row["gia"] ?></td>
-                                    <td><?php echo $row["soLuong"] ?></td>
-                                    <td><?php echo $row["moTa"] ?></td>
                                     <td><?php echo '<img style="width:70%;height:100px;display:block;margin:0 auto;" src="../img/'.$row["hinhAnh"] .'" alt="">' ?></td>
-                                    <td><?php echo $row["tenloai"] ?></td>
-                                    <td><?php echo $row["creat_at"] ?></td>
                                     <td><?php echo $row["trangThai"] ?></td>
                                     
                                 
@@ -143,13 +133,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tr>
                                     <th scope="col">EDIT</th>
                                     <th>STT</th>
-                                    <th>TÊN</th>
-                                    <th>ĐƠN GIÁ</th>
-                                    <th>SỐ LƯỢNG</th>
-                                    <th>MÔ TẢ</th>
+                                    <th>TÊN DANH MỤC</th>
                                     <th>ẢNH</th>
-                                    <th>LOẠI DANH MỤC</th>
-                                    <th>NGÀY THÊM</th>
                                     <th>TRẠNG THÁI</th>
 
                                 </tr>

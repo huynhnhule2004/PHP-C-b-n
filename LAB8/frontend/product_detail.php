@@ -30,7 +30,7 @@ $k = getSP($msp); ?>
         <div class="row m-0 ">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <div class="card w-75" style="margin: left 30px; margin-right: 20px;">
-                    <img class="img-thumbnail" style="width:100%" ; src="../img/<?php echo $k['hinhAnh']; ?>" alt="">
+                    <img class="img-thumbnail" style="width:100%" ; src="../img/<?php echo $k['hinhAnh']; ?>.webp" alt="">
                 </div>
             </div>
             <div class="col-sm-6 mb-3 mb-sm-0">
