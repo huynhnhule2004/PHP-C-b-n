@@ -11,16 +11,11 @@
 </head>
 
 <body>
-    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-        <div class="bg-dark p-4">
-            <h5 class="text-body-emphasis h4">Collapsed content</h5>
-            <span class="text-body-secondary">Toggleable via the navbar brand.</span>
-        </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
+<header>
+<nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid row justify-content-between">
             <div class="col-3">
-                <a class="navbar-brand">GÓC ĂN VẶT</a>
+                <a class="navbar-brand">GÓC MUA SẮM</a>
                 <button class="navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,49 +28,20 @@
                 </form>
             </div>
             <div class="col-1">
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="views/login.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="views/login.html">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Đăng nhập</a></li>
-                        <li><a class="dropdown-item" href="views/register.html">
-                                <i class="fas fa-user-plus"></i>
-                                Đăng ký</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="views/forgotpass.html">
-                                <i class="fas fa-lock-open"></i>
-                                Quên mật khẩu</a></li>
-                    </ul>
-                </div>
-                <!-- <div class="dropdown">
 
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="views/login.html">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Đăng nhập</a></li>
-                        <li><a class="dropdown-item" href="views/register.html">
-                                <i class="fas fa-user-plus"></i>
-                                Đăng ký</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="views/forgotpass.html">
-                                <i class="fas fa-lock-open"></i>
-                                Quên mật khẩu</a></li>
-                    </ul>
-                </div> -->
-
+                <form action="" class="d-flex " >
+                <a href="index.php?page=dangnhap" class="btn btn-outline-none w-100 h-50 text-white" role="button">
+                <i class="fas fa-user"></i></a>
+              </form>
 
 
 
             </div>
         </div>
     </nav>
+</header>
+
+    
 </body>
 
 </html>

@@ -3,10 +3,10 @@
     function getDSSP() 
     {
         $conn = getdb();
-        $sql = "SELECT * FROM sanpham WHERE trangThai = 1 ORDER BY id_sp DESC";
+        $sql = "SELECT a.*,b.ten FROM sanpham a, danhmuc b WHERE a.id_dm=b.id_dm and a.trangThai = 1 ORDER BY id_sp DESC";
         $results = mysqli_query($conn, $sql);
         if ($results === false)
-            echo mysqli_errno($conn);
+            echo mysqli_error($conn);
         else 
             $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
         return $articles;
@@ -36,12 +36,13 @@
 
         $results = mysqli_query($conn, $sql);
         if($results === false)
-            echo mysqli_errno($conn);
-        header("Locaction: " . 'sanpham_upload.php');
+            echo mysqli_error($conn);
+        header("Location: " . 'sanpham_upload.php');
     }
 
     //Ham them san pham
-    function themsp($ten,$gia,$soluong,$mota,$link,$loai,$trangthai) {
+    function themsp($ten,$gia,$soluong,$mota,$link,$loai,$trangthai) 
+    {
         $conn = getdb();
         if(!$ten || !$gia || !$soluong || !$mota) {
             echo "<h1>Vui lòng nhập đầy đủ thông tin sản phẩm!</h1>";
@@ -49,13 +50,13 @@
             exit;
         }
         $sql = "SELECT * FROM sanpham WHERE ten='$ten'";
-        $resulut = $conn->query($sql);
+        $result = $conn->query($sql);
         //chua ton tai model cung ten
-        if(mysqli_num_rows($resulut) == 0) {
+        if(mysqli_num_rows($result) == 0) {
             $sql = "INSERT INTO sanpham(ten,gia,soLuong,moTa,hinhAnh,id_dm,trangThai)
             VALUES ('$ten',$gia,$soluong,'$mota','$link',$loai,'$trangthai')";
             echo $sql;
-            $resulut = $conn->query($sql);
+            $result = $conn->query($sql);
             //Xóa cookie để xóa linkfilemodel cũ
             session_start();
             unset($_SESSION["file_uploaded"]);

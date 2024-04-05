@@ -47,14 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <style>
     #datatablesSimple th:nth-child(1) {
         width: 200px;
@@ -72,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <!-- main content start -->
-<div id="layoutSidenav_content">
-    <main>
-        <div class="container-fluid px-4">
+<!-- <div id="layoutSidenav_content"> -->
+    <main class="col-10 p-0">
+        <div class="container-fluid px-4  p-0">
             <h1 class="mt-4">Danh sách sản phẩm</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">
@@ -82,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </li>
             </ol>
             <div class="card mb4">
-                <form action="hinhanh_upload.php" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="w-50">
                             <input class="form-control mb-2 mt-2" type="file" name="photo" id="photo">
@@ -137,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <td><?php echo $row["soLuong"] ?></td>
                                     <td><?php echo $row["moTa"] ?></td>
                                     <td><?php echo '<img style="width:70%;height:100px;display:block;margin:0 auto;" src="../img/'.$row["hinhAnh"] . '.webp" alt="">' ?></td>
-                                    <td><?php echo $row["id_dm"] ?></td>
+                                    <td><?php echo $row["ten"] ?></td>
                                     <td><?php echo $row["creat_at"] ?></td>
                                     <td><?php echo $row["trangThai"] ?></td>
                                     
@@ -168,6 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
     <?php include "footer.php"; ?>
-</div>
+<!-- </div> -->
+                                </div>
 </body>
 </html>
