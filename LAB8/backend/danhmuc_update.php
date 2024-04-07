@@ -1,7 +1,7 @@
 <?php
 include("../model/danhmuc.php");
+$ma = $_GET["ma"];
 $ten = $_GET["ten"];
-$link = $_GET["link"];
 $trangthai = $_GET["trangthai"];
-themdm($ten,$link,$trangthai);
+suadm($ma, $ten, $trangthai);
 ?>

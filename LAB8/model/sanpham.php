@@ -37,7 +37,7 @@
         $results = mysqli_query($conn, $sql);
         if($results === false)
             echo mysqli_error($conn);
-        header("Location: " . 'sanpham_upload.php');
+        header("Location: " . 'index.php?page=sanpham_upload');
     }
 
     //Ham them san pham
@@ -60,7 +60,7 @@
             //Xóa cookie để xóa linkfilemodel cũ
             session_start();
             unset($_SESSION["file_uploaded"]);
-            header("Location:" . 'sanpham_upload.php');
+            header("Location:" . 'index.php?page=sanpham_upload');
         } else {
             echo "<h1>Sản phẩm đã tồn tại!</h1>";
             echo "<a href" . '"sanpham.php"' . " >Trở lại</a>";
