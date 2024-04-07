@@ -28,7 +28,7 @@ $articles = getDSDM();
                     <img class="label" src="../img/newicon.jpg" alt="">
                     <?php $linkdetail = "category_list.php?maloai=" . $k['id_dm']; ?>
                     <a href="<?php echo $linkdetail; ?>">
-                        <img class="anhsp" src="../img/<?php echo $k['hinhAnh']; ?>.webp" alt=""></a>
+                        <img class="anhsp" src="../img/<?php echo $k['hinhAnh']; ?>" alt=""></a>
 
                 </div>
             </div>

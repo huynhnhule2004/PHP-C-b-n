@@ -33,7 +33,7 @@
                             <option value="">Ví điện tử</option>
                             <option value="">Thẻ tín dụng hoặc thẻ ghi nợ</option>
                         </select> <br>
-                        <a href="success.php">
+                        <a href="index.php?page=success">
                             <input type="button" class="btn bg-info text-white mt-4" value="Hoàn tất đơn hàng">
                         </a>
                     </form>

@@ -33,7 +33,7 @@ $articles = getDM($maloai);
                 <img class="label" src="../img/newicon.jpg" alt="">
                 <?php $linkdetail = "product_detail.php?msp=" . $k['id_sp']; ?>
                 <a href="<?php echo $linkdetail; ?>">
-                    <img class="anhsp" src="../img/<?php echo $k['hinhAnh'];?>.webp" alt="">
+                    <img class="anhsp" src="../img/<?php echo $k['hinhAnh'];?>" alt="">
                 </a>
                 <div class="giasp"><?php echo $k['gia']?></div>
                 <div class="icon">

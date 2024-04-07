@@ -26,12 +26,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 break;
             default :
             include_once("index.php");
-            include ("article.php");
+            include ("articles.php");
             break;
         }
     } else {
         include_once("index.php");
-        include ("article.php");
+        include ("articles.php");
     }
 } else {
     // nếu chưa đăng nhập thành công, chuyển hướng người dùng đến trang đăng nhập
