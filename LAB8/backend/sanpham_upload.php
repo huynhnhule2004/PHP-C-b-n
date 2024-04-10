@@ -7,7 +7,7 @@ $articles = getDSSP();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Kiểm tra quá trình upload file có bị lỗi gì không?
     if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
-        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png","webp" => "image/webp");
+        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png", "webp" => "image/webp");
         //Lấy thông tin file bao gồm tên file, loại file, kích cỡ file
         $filename = $_FILES["photo"]["name"];
         $filetype = $_FILES["photo"]["type"];
@@ -47,12 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <style>
+<style>
     #datatablesSimple th:nth-child(1) {
         width: 200px;
     }
@@ -67,9 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 </style>
 </head>
+
 <body>
     <!-- main content start -->
-<!-- <div id="layoutSidenav_content"> -->
+    <!-- <div id="layoutSidenav_content"> -->
     <main class="col-10 p-0">
         <div class="container-fluid px-4  p-0">
             <h1 class="mt-4">Danh sách sản phẩm</h1>
@@ -115,33 +116,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </thead>
                             <tbody>
                                 <tr><?php
-                                $i =1;
-                                foreach ($articles as $row) {
+                                    $i = 1;
+                                    foreach ($articles as $row) {
                                     ?>
-                                    <td align="right">
-                                        <input type="radio" name="touch" value=<?php echo $row["id_sp"] ?>>
-                                        <button name="sua" type="submit" class="btn btn-outline-warning" formaction="sanpham_sua.php">
-                                            <i class="fas fa-user-edit" style="color: green;"></i> Sửa
-                                        </button>
-                                        <button name="xoa" type="submit" class="btn btn-outline-danger" formaction="sanpham_xoa.php">
-                                            <i class="fas fa-user-times" style="color: green;"></i> Xóa
-                                        </button>
-                                    </td>
-                                    <td><?php echo $i;
-                                    $i++; ?></td>
-                                    <td><?php echo $row["ten"] ?></td>
-                                    <td><?php echo $row["gia"] ?></td>
-                                    <td><?php echo $row["soLuong"] ?></td>
-                                    <td><?php echo $row["moTa"] ?></td>
-                                    <td><?php echo '<img style="width:70%;height:100px;display:block;margin:0 auto;" src="../img/'.$row["hinhAnh"] .'" alt="">' ?></td>
-                                    <td><?php echo $row["tenloai"] ?></td>
-                                    <td><?php echo $row["creat_at"] ?></td>
-                                    <td><?php echo $row["trangThai"] ?></td>
-                                    
-                                
+                                        <td align="right">
+                                            <input type="radio" name="touch" id="sua" value=<?php echo $row["id_sp"] ?>>
+                                            <button  name="sua" type="submit" class="btn btn-outline-warning" formaction="sanpham_sua.php">
+                                                <i class="fas fa-user-edit" style="color: green;"></i> Sửa
+                                            </button>
+                                            <button id="deleteBtn" name="xoa" type="submit" class="btn btn-outline-danger" formaction="sanpham_xoa.php">
+                                                <i class="fas fa-user-times" style="color: green;"></i> Xóa
+                                            </button>
+                                        </td>
+                                        <td><?php echo $i;
+                                            $i++; ?></td>
+                                        <td><?php echo $row["ten"] ?></td>
+                                        <td><?php echo $row["gia"] ?></td>
+                                        <td><?php echo $row["soLuong"] ?></td>
+                                        <td><?php echo $row["moTa"] ?></td>
+                                        <td><?php echo '<img style="width:70%;height:100px;display:block;margin:0 auto;" src="../img/' . $row["hinhAnh"] . '" alt="">' ?></td>
+                                        <td><?php echo $row["tenloai"] ?></td>
+                                        <td><?php echo $row["creat_at"] ?></td>
+                                        <td><?php echo $row["trangThai"] ?></td>
+
+
 
                                 </tr>
-                                <?php } ?>
+                            <?php } ?>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -165,7 +166,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
     <?php include "footer.php"; ?>
-<!-- </div> -->
-                                </div>
+    <!-- </div> -->
+    </div>
+    <script>
+        document.getElementById("deleteBtn").addEventListener("click", function() {
+            // Hiển thị hộp thoại xác nhận
+            var confirmation = confirm("Bạn có chắc muốn xóa?");
+
+            // Nếu người dùng xác nhận, chuyển hướng đến trang xác nhận xóa
+            if (confirmation) {
+                window.location.href = "sanpham_xoa.php";
+            } else {
+                document.getElementById("sua").checked = false;
+            }
+        });
+    </script>
 </body>
+
 </html>

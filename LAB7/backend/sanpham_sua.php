@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                 <div class="input-group w-70 mb-3 mt-2">
                                     <!-- lề trái ms-2 lề phải me-2 -->
                                     <span class="input-group-text ms-2 w-30" id="inputGroup-sizing-default">Đơn giá</span>
-                                    <?php echo '<input name="gia"  readonly autofocus class="form-control me-2"
+                                    <?php echo '<input name="gia"  autofocus class="form-control me-2"
                                     aria-lable="Sizing example input" aria-describedly="inputGroup-sizing-default" type=text value="' . $k['gia'] . '">'; ?>
                                 </div>
                             </td>

@@ -24,11 +24,11 @@
                     <table class="mb-3">
                         <tr>
                             <td>
-                                <a href=""><img src="../img/010_BLOKECORE_T-SHIRT_GRAY-BLACK.webp" alt=""></a>
+                                <a href=""><img src="../img/TYPO_T-SHIRT_RED.webp" alt=""></a>
 
                             </td>
                             <td class="w-50">
-                                <a href="" class="fw-bold d-block">ZODIAC T-SHIRT/DARK BROW</a>
+                                <a href="" class="fw-bold d-block">TYPO T-SHIRT/RED</a>
                                 <a href="" class="d-block">L</a>
                                 <span class="m-3">₫49,000 <span class="text-decoration-line-through">(₫420,000)</span></span>
                                 <div class="input-group  w-50 ms-3">
@@ -54,7 +54,7 @@
                     <div class="total border">
                         <form action="" class="p-4">
                             <label for="" class="float-start fw-bold">Tổng tiền</label>
-                            <label for="" class="float-end">₫0</label> <br>
+                            <label for="" class="float-end">₫49000</label> <br>
                             <a href="index.php?page=dathang">
                                 <input type="button" value="THANH TOÁN" class="mt-2">
                             </a>

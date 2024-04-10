@@ -43,21 +43,21 @@
                         <table>
                             <tr>
                                 <td class="w-25">
-                                    <img src="../img/011_BLOKECORE_T-SHIRT_WHITE-BLACK.webp" alt="" class="w-75">
+                                    <img src="../img/TYPO_T-SHIRT_RED.webp" alt="" class="w-75">
                                 </td>
                                 <td class="w-50">
-                                    <span>ZODIAC T-SHIRT/DARK BROW</span><br>
+                                    <span>TYPO T-SHIRT/RED</span><br>
                                     <span>L</span>
                                 </td>
                                 <td class="w-25">
-                                    <span class="ps-5">₫98,000</span>
+                                    <span class="ps-5">₫49000</span>
                                 </td>
                             </tr>
                         </table>
                         <hr>
                         <div class="div">
                             <span class="float-start">Tổng cộng</span>
-                            <span class="float-end fw-bold fs-4">₫133,000</span>
+                            <span class="float-end fw-bold fs-4">₫49000</span>
                         </div>
                     </div>
 
